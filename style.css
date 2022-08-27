@@ -6,6 +6,7 @@ body{
     background-repeat:no-repeat; 
     width:100vw;
     height:100vh;
+    z-index:2;
 }
 .container
 {
@@ -144,12 +145,18 @@ ul>li>img
     margin-left:0px;
     font-family: 'DynaPuff', cursive;
     font-weight:100;
+    z-index:1;
     
+}
+.songName
+{
+    margin-left:10px;
 }
 .songItem img
 {
     width:33px;
     border-radius:7px;
+    margin-left:18px;
 
 }
 .timeStamp
@@ -174,9 +181,9 @@ ul>li>img
     background-color:rgb(219, 90, 64);
     /* height:40px; */
 }
-.songInfo span
+/* .songInfo span
 {
     font-family: 'DynaPuff', cursive;
     font-weight:100;
     margin:13px 10px;
-}
+} */

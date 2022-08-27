@@ -2,7 +2,7 @@ console.log("Welcome to soundela");
 let audioElement= new Audio('songs/1.mp3');
 let songIndex=0;
 let masterPlay=document.getElementById('masterPlay');
-// let songInfo=document.getElementsByClassName('songInfo');
+let songInfo=document.getElementsByClassName('songInfo');
 let myProgressBar=document.getElementById('myProgressBar');
 let gif=document.getElementById('gif');
 let songItems=Array.from(document.getElementsByClassName('songItem'));
@@ -15,6 +15,7 @@ let songs=
     {songName:"Satisfya", filePath:"songs/5.mp3", coverPath:"covers/5.jpg"},
     {songName:"Faded", filePath:"songs/6.mp3", coverPath:"covers/6.jpg"},
     {songName:"taare ne pasand menu", filePath:"songs/7.mp3", coverPath:"covers/7.jpg"},
+    {songName:"Raata diya bujha ke", filePath:"songs/6.mp3", coverPath:"covers/8.webp"},
 ]
 songItems.forEach((element,i)=>
 {
@@ -23,6 +24,8 @@ songItems.forEach((element,i)=>
     element.getElementsByClassName("songName")[0].innerText= songs[i].songName;
 })
 // audioElement.play();
+// let ans=<i id="0"class="fa-solid songPlay fa-1x fa-circle-play"></i>;
+let ans;
 masterPlay.addEventListener('click',()=>
 {
     if(audioElement.paused || audioElement.currentTime<=0)
@@ -30,6 +33,9 @@ masterPlay.addEventListener('click',()=>
         audioElement.play();
         masterPlay.classList.remove('fa-circle-play');
         masterPlay.classList.add('fa-circle-pause');
+        ans.classList.remove('fa-circle-play');
+        ans.classList.add('fa-circle-pause');
+        
         gif.style.opacity=1;
 
     }
@@ -37,6 +43,8 @@ masterPlay.addEventListener('click',()=>
         audioElement.pause();
         masterPlay.classList.remove('fa-circle-pause');
         masterPlay.classList.add('fa-circle-play');
+        ans.classList.remove('fa-circle-pause');
+        ans.classList.add('fa-circle-play');
         makeallPlays();
         gif.style.opacity=0;
 
@@ -105,6 +113,7 @@ Array.from(document.getElementsByClassName('songPlay')).forEach((element)=>
               makeallPlays();
               index=parseInt(e.target.id);
               ans=e.target;
+            //   console.log();
               e.target.classList.remove('fa-circle-play');
               e.target.classList.add('fa-circle-pause');
               audioElement.src=`songs/${index+1}.mp3`;
