@@ -181,9 +181,15 @@ ul>li>img
     background-color:rgb(219, 90, 64);
     /* height:40px; */
 }
-/* .songInfo span
+h2
+{
+     font-family: 'Lobster Two', cursive;
+     font-size:41px;
+     margin-left:13px;
+}
+.songInfo span
 {
     font-family: 'DynaPuff', cursive;
     font-weight:100;
     margin:13px 10px;
-} */
+}
