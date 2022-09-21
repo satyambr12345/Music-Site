@@ -87,14 +87,7 @@ const makeallPlays=()=>
 {
     Array.from(document.getElementsByClassName('songPlay')).forEach((element)=>
     {
-         element.classList.add('fa-circle-play');
-    })
-    
-}
-const makeallPlays2=()=>
-{
-    Array.from(document.getElementsByClassName('songPlay')).forEach((element)=>
-    {
+        element.classList.remove('fa-circle-pause');
          element.classList.add('fa-circle-play');
     })
     
@@ -120,10 +113,11 @@ Array.from(document.getElementsByClassName('songPlay')).forEach((element)=>
           }
           else
           {
-            makeallPlays2();
-            songIndex=parseInt(e.target.id);
-            masterPlay.classList.add('fa-circle-play');
-            audioElement.pause();
+              makeallPlays();
+              songIndex=parseInt(e.target.id);
+              masterPlay.classList.remove('fa-circle-pause');
+              masterPlay.classList.add('fa-circle-play');
+              audioElement.pause();
             gif.style.opacity=0;
           }
           masterSongName.innerText=songs[songIndex].songName;
@@ -150,7 +144,7 @@ document.getElementById('previous').addEventListener('click',(e)=>
 {
     if(songIndex<=0)
     {
-        songIndex=0;
+        songIndex=8;
     }
     else{
         songIndex-=1;
